@@ -2,13 +2,7 @@
 
 -  TensorFlow中的每一个计算都是计算图的一个点，节点之间的边描述了计算之间的依赖关系.
 -  TensorFlow系统自动维护一个默认的计算图，可以通过tf.get_default_graph获取默认计算图；可以通过tf.Graph生成新的计算图。不同计算图赏的张量和运算不会共享。
--  TensorFlow支持14中类型：
-# 学习笔记之TensorFlow入门
-
--  TensorFlow中的每一个计算都是计算图的一个点，节点之间的边描述了计算之间的依赖关系.
--  TensorFlow系统自动维护一个默认的计算图，可以通过tf.get_default_graph获取默认计算图；可以通过tf.Graph生成新的计算图。不同计算图赏的张量和运算不会共享。
--  TensorFlow支持14中类型：
-![](media/15167058231507/15167065340161.png)
+-  TensorFlow支持14中类型：https://images2017.cnblogs.com/blog/1117016/201708/1117016-20170815202428350-339958009.png
 
 
 - Tensor 张量
