@@ -3,7 +3,30 @@
 -  TensorFlow中的每一个计算都是计算图的一个点，节点之间的边描述了计算之间的依赖关系.
 -  TensorFlow系统自动维护一个默认的计算图，可以通过tf.get_default_graph获取默认计算图；可以通过tf.Graph生成新的计算图。不同计算图赏的张量和运算不会共享。
 -  TensorFlow支持14中类型：
-![](media/15167058231507/15167065340161.png)
+
+```
+import tensorflow as tf
+
+#定义常量tf.string是字符串类型
+hello = tf.constant('Hello,world!', dtype=tf.string)
+sess=tf.Session()
+print(sess.run(hello))
+#定义常量tf.bool是布尔类型,如果改为‘false’就会报错，显示更改为字符串类型
+boolean  = tf.constant(False, dtype=tf.bool)
+print(sess.run(boolean))
+#定义常量tf.int8,int16,int32,int64类型（有符号整形）
+int  = tf.constant(100, dtype=tf.int8)
+print(sess.run(int))
+#定义常量tf.uint8，tf.uint16（无符号整形）
+uint  = tf.constant(100, dtype=tf.uint8)
+print(sess.run(uint))
+#定义常量tf.float16，tf.float32，tf.float64，tf.double（浮点数）
+float  = tf.constant(100, dtype=tf.float16)
+print(sess.run(float))
+#定义常量tf.complex64，tf.complex128（复数）
+complex  = tf.constant(100, dtype=tf.complex64)
+print(sess.run(complex))
+```
 
 
 - Tensor 张量
