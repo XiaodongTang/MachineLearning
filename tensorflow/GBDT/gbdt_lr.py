@@ -23,7 +23,7 @@ def gbdt_lr_train(libsvmFileName):
 	print(str(score))
 	#print(str(gbdt.get_params(True)))
 	#print(str(gbdt.train_score_))
-	print('gbdt auc: %.5f' % gbdt_auc)
+	print('GBDT AUC: %.5f' % gbdt_auc)
 
 	lr = LogisticRegression()
 	lr.fit(X_train, y_train)
@@ -43,17 +43,6 @@ def gbdt_lr_train(libsvmFileName):
 	y_pred_gbdtlr1 = lr.predict_proba(X_trans[train_rows:, :])[:, 1]
 	gbdt_lr_auc1 = roc_auc_score(y_test, y_pred_gbdtlr1)
 	print('GBDT + LR AUC: %.5f' % gbdt_lr_auc1)
-	'''
-	lr = LogisticRegression(n_jobs=-1)
-	X_train_ext = hstack([X_trans[:train_rows, :], X_train])
-	X_test_ext = hstack([X_trans[train_rows:, :], X_test])
-	print(X_train_ext.shape)
-
-	lr.fit(X_train_ext, y_train)
-	y_pred_gbdtlr2 = lr.predict_proba(X_test_ext)[:, 1]
-	gbdt_lr_auc2 = roc_auc_score(y_test, y_pred_gbdtlr2)
-	print('bath LR AUC: %.5f' % gbdt_lr_auc2)
-	'''
 if __name__ == '__main__':
 	gbdt_lr_train('./feature5.txt')
 
